@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Diabetes Risk Prediction</title>
+   <style>
+       /* Existing styles */
+       body {
+           font-family: Arial, sans-serif;
+           margin: 20px;
+           background-color: #F5F5F5; /* Light Gray */
+           color: #333333; /* Dark Gray */
+       }
+       h1, h2 {
+           color: #2C3E50; /* Navy */
+       }
+       form {
+           margin-bottom: 20px;
+           padding: 20px;
+           background-color: #FFFFFF; /* White */
+           border-radius: 8px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       }
+       label {
+           display: inline-block;
+           width: 180px;
+           font-weight: bold;
+           color: #2C3E50; /* Navy */
+       }
+       input {
+           margin-bottom: 10px;
+           padding: 8px;
+           width: 200px;
+           border-radius: 4px;
+           border: 1px solid #ccc;
+       }
+       input[type="submit"] {
+           background-color: #008080; /* Teal */
+           color: #FFFFFF; /* White */
+           border: none;
+           cursor: pointer;
+           font-weight: bold;
+       }
+       input[type="submit"]:hover {
+           background-color: #90EE90; /* Soft Green */
+       }
+       p {
+           font-size: 18px;
+           margin-top: 20px;
+           padding: 10px;
+           background-color: #FAFAFA; /* Off-White */
+           border-radius: 8px;
+       }
+       nav {
+           background-color: #008080; /* Teal */
+           padding: 10px;
+           border-radius: 5px;
+       }
+       nav a {
+           color: #FFFFFF; /* White */
+           text-decoration: none;
+           margin-right: 15px;
+           font-weight: bold;
+       }
+       nav a:hover {
+           color: #90EE90; /* Soft Green */
+       }
+       .alert {
+           color: red;
+           font-weight: bold;
+           margin-bottom: 10px;
+       }
+       footer {
+           background-color: #fffffffb; /* Light background */
+           color: #333333; /* Darker text */
+           padding: 20px 0;
+           text-align: center;
+       }
+       footer a {
+           color: #163dd6; /* Blue text */
+           text-decoration: none;
+           font-weight: bold;
+       }
+       footer a:hover {
+           color: #90EE90; /* Soft Green */
+       }
+       .footer-bottom {
+           padding: 10px 0;
+           border-top: 1px solid #444444;
+       }
+       .social-list {
+           list-style: none;
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           margin-top: 10px;
+       }
+       .social-list li {
+           margin: 0 10px;
+       }
+       .social-link {
+           color: #163dd6; /* Blue */
+           font-size: 18px;
+           text-decoration: none;
+       }
+       .social-link:hover {
+           color: #90EE90; /* Soft Green */
+       }
+   </style>
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+   <script>
+       function validateForm() {
+           let inputs = document.querySelectorAll('input[type="text"]');
+           let alertBox = document.querySelector('.alert');
+           let isValid = true;
+
+
+           inputs.forEach(input => {
+               if (input.value.trim() === "") {
+                   isValid = false;
+               }
+           });
+
+
+           if (!isValid) {
+               alertBox.textContent = "Please fill in all fields before submitting.";
+               return false;
+           }
+
+
+           alertBox.textContent = ""; // Clear any previous messages
+           return true;
+       }
+   </script>
+</head>
+<body>
+   <nav>
+       <a href="/">Home</a> |
+       <a href="/predictor">Diabetes Predictor</a>
+   </nav>
+
+
+   <h1>Diabetes Risk Prediction</h1>
+
+
+   <!-- Flash message box -->
+   <div class="alert"></div>
+
+
+   <form action="/predict" method="post" onsubmit="return validateForm();">
+       <label for="pregnancies">Number of Pregnancies:</label>
+       <input type="text" id="pregnancies" name="pregnancies"><br>
+
+
+       <label for="glucose">Glucose Level:</label>
+       <input type="text" id="glucose" name="glucose"><br>
+
+
+       <label for="bloodpressure">Blood Pressure (mm Hg):</label>
+       <input type="text" id="bloodpressure" name="bloodpressure"><br>
+
+
+       <label for="skinthickness">Skin Thickness (mm):</label>
+       <input type="text" id="skinthickness" name="skinthickness"><br>
+
+
+       <label for="insulin">Insulin Level:</label>
+       <input type="text" id="insulin" name="insulin"><br>
+
+
+       <label for="bmi">BMI:</label>
+       <input type="text" id="bmi" name="bmi"><br>
+
+
+       <label for="dpf">Diabetes Pedigree Function:</label>
+       <input type="text" id="dpf" name="dpf"><br>
+
+
+       <label for="age">Age:</label>
+       <input type="text" id="age" name="age"><br>
+
+
+       <input type="submit" value="Predict">
+   </form>
+
+
+   <h2>Prediction Result</h2>
+   <p>{{ prediction_text }}</p>
+
+
+   <h2>Health Suggestions</h2>
+   <p>{{ suggestions_text }}</p>
+
+
+   <footer>
+       <div class="footer-bottom">
+           <p style="margin: 0; color: #163dd6;">
+               &copy; DiabetesEarlyDetectionPredictor Developed by <a href="#" style="color: #231dc0; font-weight: bold;">Akshay</a>
+           </p>
+
+
+           <ul style="list-style: none; padding: 0; margin: 10px 0 0 0; display: inline-flex; justify-content: center;">
+               <li style="margin: 0 10px;">
+                   <a href="https://www.linkedin.com/in/akshay-srinivas-bb054a173/" class="social-link">
+                       <ion-icon name="logo-linkedin" style="vertical-align: middle; font-size: 18px; color: #0c35ec;"></ion-icon>
+                       <span style="margin-left: 5px;">Linkedin</span>
+                   </a>
+               </li>
+           </ul>
+       </div>
+   </footer>
+</body>
+</html>

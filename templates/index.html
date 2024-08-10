@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Awareness and Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #FAFAFA; /* Off-White */
+            color: #333333; /* Dark Gray */
+        }
+
+        h1, h2 {
+            color: #2C3E50; /* Navy */
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #008080; /* Teal */
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #FFFFFF; /* White */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #90EE90; /* Soft Green */
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li strong {
+            color: #FF7F50; /* Coral */
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .intro-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .intro-text {
+            flex: 2;
+        }
+
+        .intro-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -20px; /* Reduce the gap between text and next section */
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .references {
+            background-color: #FAFAFA;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .references h3 {
+            margin-top: 0;
+        }
+
+        .references ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .references li {
+            margin-bottom: 10px;
+        }
+
+        .references a {
+            color: #008080;
+            text-decoration: none;
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #fffffffb;
+            color: #333333;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #163dd6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #90EE90;
+        }
+
+        .footer-bottom {
+            padding: 10px 0;
+            border-top: 1px solid #444444;
+        }
+
+        .social-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-list li {
+            margin: 0 10px;
+        }
+
+        .social-link {
+            color: #163dd6;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            color: #90EE90;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/predictor">Diabetes Predictor</a>
+    </nav>
+
+    <h1>Understanding Diabetes</h1>
+
+    <section class="intro-section">
+        <div class="intro-text">
+            <p>
+                Diabetes is a chronic medical condition wherein the human system is either unable to produce enough insulin or is unable to use the insulin it has. Insulin is a hormone produced by the pancreas, which allows glucose, or sugar, from food to get into cells to be used for energy. In the event that there is too little insulin, if the body is unable to respond to it, or if insulin is ineffective, then glucose will start building up in the blood and thus its level gets too high—a condition known as hyperglycemia.
+            </p>
+            <p>
+                There are three main types of diabetes:
+            </p>
+            <ul>
+                <li><strong>Type 1 Diabetes:</strong> An autoimmune condition where the body attacks and destroys insulin-producing
+                    cells in the pancreas. People with Type 1 diabetes need to take insulin every day.</li>
+                <li><strong>Type 2 Diabetes:</strong> The most common form, where the body becomes resistant to insulin or the pancreas
+                    doesn't produce enough. It is often associated with obesity and can be managed with lifestyle changes,
+                    oral medications, or insulin.</li>
+                <li><strong>Gestational Diabetes:</strong> A temporary form of diabetes that occurs during pregnancy and usually goes
+                    away after childbirth. However, it increases the risk of developing Type 2 diabetes later in life.</li>
+            </ul>
+            <p>
+                Diabetes is one of the severe conditions that require continuous management and monitoring. In case treatment is not proper, it will result in serious complications like heart diseases, stroke, failure of kidneys, blindness, and damage to nerves. It would not show its potentiality if early detection and management are ensured.
+            </p>
+        </div>
+        <div class="intro-image">
+            <img src="{{ url_for('static', filename='Images/diabetesimage.jpg') }}" alt="Diabetes">
+        </div>
+    </section>
+
+    <section>
+        <h2>Why is Diabetes a Major Concern?</h2>
+        <p>
+            Diabetes is among the significant causes of global death and disability. It is most devastating in females, particularly pregnant women, owing to the increased risk from gestational diabetes. Women who are pregnant and suffering from gestational diabetes present such complications as preeclampsia, preterm birth, and cesarean delivery. In addition, their babies have an increased chance of having excessive birth weight, which might result in birth complications.
+        </p>
+        <p>
+            In the broader population, diabetes increases the risk of cardiovascular diseases such as heart attacks and
+            strokes. It is also a leading cause of kidney failure, requiring dialysis or a kidney transplant for survival.
+            Nerve damage caused by diabetes can lead to loss of sensation in the extremities, increasing the risk of
+            injuries and infections, which may require amputation in severe cases.
+        </p>
+        <p>
+            The economic burden that diabetes presents is enormous. A person suffering from diabetes has high costs that relate to medical care, and the condition causes loss in productivity due to sickness and disability. In most countries, the ever-increasing cases of diabetes are always putting pressure on the health system; therefore, preventing the disease and ensuring its good management has become a priority in public health.
+        </p>
+    </section>
+
+    <section>
+        <h2>Prevention Tips</h2>
+        <p>
+            While some risk factors for diabetes, such as genetics and age, cannot be changed, there are several lifestyle
+            modifications that can significantly reduce the risk of developing Type 2 diabetes or manage it effectively
+            for those already diagnosed:
+        </p>
+        <ul>
+            <li><strong>Healthy Eating:</strong> Focus on whole foods such as vegetables, fruits, whole grains, lean proteins, and
+                healthy fats. Avoid processed foods high in sugar, refined carbs, and unhealthy fats, which can lead to
+                weight gain and increased blood sugar levels.</li>
+            <li><strong>Regular Physical Activity:</strong> Aim for at least 30 minutes of moderate to intense physical activity
+                most days of the week. Exercise helps regulate blood sugar levels and improves insulin sensitivity, making
+                it easier for the body to use glucose effectively.</li>
+            <li><strong>Weight Management:</strong> Maintaining a healthy weight reduces your risk of developing diabetes. Even a
+                modest weight loss of 5-7% of body weight can significantly lower the risk.</li>
+            <li><strong>Regular Check-ups:</strong> Regular medical check-ups can help detect diabetes early, allowing for timely
+                intervention. Monitoring blood sugar levels, blood pressure, and cholesterol is important for managing
+                overall health.</li>
+            <li><strong>Quit Smoking:</strong> Smoking increases the risk of Type 2 diabetes and can worsen complications in people
+                who already have the condition. Quitting smoking improves cardiovascular health and overall well-being.</li>
+            <li><strong>Limit Alcohol:</strong> Excessive alcohol consumption can lead to weight gain and increase the risk of
+                Type 2 diabetes. If you drink alcohol, do so in moderation.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>The Solution: Machine Learning Model for Early Detection</h2>
+        <img src="{{ url_for('static', filename='Images/ensemble_models.png') }}" alt="Machine Learning Model">
+        <p>
+            To address the issue of late diagnosis, we developed a machine learning model that predicts the risk of
+            diabetes based on various health indicators. This model can help in early detection, enabling individuals to
+            take preventive measures before the condition worsens.
+        </p>
+        <p>
+            The model uses data from the Pima Indian Diabetes dataset, focusing on females, and leverages an ensemble method with a stacking classifier to achieve accurate predictions. The ensemble method combines multiple machine learning algorithms to improve prediction accuracy and robustness. Early detection through this model can guide individuals to seek timely medical advice, potentially preventing the progression of the disease and reducing long-term complications.
+        </p>
+    </section>
+
+    <section class="references">
+        <h3>References and Citations</h3>
+        <ul>
+            <li>
+                <a href="https://intuitivetutorial.com/2023/05/12/ensemble-models-in-machine-learning/" target="_blank">Ensemble Models in Machine Learning - Intuitive Tutorial</a>
+            </li>
+            <li>
+                <a href="https://bioquicknews.com/researchers-find-a-molecular-mechanism-involved-in-type-2-diabetes/" target="_blank">Researchers Find a Molecular Mechanism Involved in Type 2 Diabetes - BioQuick News</a>
+            </li>
+            <li>
+                <a href="https://www.diabetes.org/diabetes" target="_blank">Diabetes Overview - American Diabetes Association</a>
+            </li>
+            <li>
+                <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank">Diabetes - World Health Organization (WHO)</a>
+            </li>
+            <li>
+                <a href="https://www.cdc.gov/diabetes/basics/diabetes.html" target="_blank">Diabetes Basics - Centers for Disease Control and Prevention (CDC)</a>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p style="margin: 0; color: #163dd6;">
+                &copy; DiabetesEarlyDetectionPredictor Developed by <a href="#" style="color: #231dc0; font-weight: bold;">Akshay</a>
+            </p>
+
+            <ul style="list-style: none; padding: 0; margin: 10px 0 0 0; display: inline-flex; justify-content: center;">
+                <li style="margin: 0 10px;">
+                    <a href="https://www.linkedin.com/in/akshay-srinivas-bb054a173/" class="social-link">
+                        <ion-icon name="logo-linkedin" style="vertical-align: middle; font-size: 18px; color: #0c35ec;"></ion-icon>
+                        <span style="margin-left: 5px;">Linkedin</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+
