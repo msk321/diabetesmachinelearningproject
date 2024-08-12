@@ -76,5 +76,5 @@ def predict():
     return render_template('predictor.html', prediction_text=result, suggestions_text=suggestions)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,port= 5001)
 
